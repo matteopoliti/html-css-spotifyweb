@@ -59,18 +59,51 @@ header div a:hover{
 /* SIDEBAR */
 
 .sidebar{
-    height: 100vh;
-    width: 60px; 
+    height: 90vh;
+    width: 40px;
     position: fixed; 
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color:aqua; 
+    background-color:var(--bcg-sidebar); 
     overflow-x: hidden; 
-    padding-top: 20px;
+    padding: 5px 7px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.sidebar .logos,
+.sidebar .download-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.sidebar .logos div:first-child figure img:last-child{
+    display: none;
+}
+
+.sidebar > div span{
+    display: none;
+}
+
+.sidebar .download-profile div:first-child img{ 
+    width: 15px;
+}
+
+.sidebar .download-profile div:last-child img{ 
+    background-color: var(--grey);
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+
+.sidebar .download-profile .line{
+    display: none;
+    border: 1px solid var(--grey);
+    width: 100%;
 }
 
 .sidebar .playlist{
@@ -147,7 +180,7 @@ main .popular-artist > div div{
 /* FOOTER */
 
 footer{
-    height: 70px;
+    height: 10vh;
     background-color: green;
     width: 100%;
     position: fixed;
@@ -166,21 +199,130 @@ footer{
 
 
 
+/*  */
+/* MEDIA QUERIES */
+/*  */
 
-
+/* TABLET SMALL */
 
 @media screen and (min-width: 576px){
-    .sidebar .playlist{
+    .sidebar{
+        width: 200px;
+        padding: 10px 0;
+    }
+    .sidebar .logos > div{
         display: flex;
+        gap:5px;
+        padding-inline: 15px;
+    }
+
+    .sidebar img{
+        width: 20px;
+    }
+
+    
+    .sidebar .logos div:first-child figure img:last-child{
+        display: block;
+        width: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .sidebar .logos div:first-child figure img:first-child{
+        display: none;
+    }
+    
+    .sidebar > div span{
+        display: inline;
+        color: var(--grey);
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    .sidebar .logos,
+    .sidebar .download-profile{
+        align-items: flex-start;
         gap: 10px;
     }
 
-    .sidebar .playlist ul{
-        list-style-type: none;
-        margin-left: 1em;
+    .sidebar .playlist {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
     }
+    
+    .sidebar .playlist h4{
+        color: var(--white);
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .sidebar .playlist ul{
+        text-transform: capitalize;
+        list-style-type: none;
+        color: var(--grey);
+    }
+
+    .sidebar .playlist ul li{
+        margin-block: 10px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .sidebar .playlist ul li:first-child{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .sidebar .playlist ul li > div{
+        background-color: var(--grey);
+        padding: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        
+    }
+
+    .sidebar .playlist ul li > div span{
+        color: #000000;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sidebar .download-profile{
+        padding: 15px;
+    }
+
+    .sidebar .download-profile div{ 
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sidebar .download-profile .line{
+        display: block;
+        border: 1px solid var(--grey);
+        width: 100%;
+    }
+    
+    main{
+        padding: 50px 50px 50px 250px;
+        
+        
+    }
+    
+    
 }
 
+
+/* TABLET */
 
 @media screen and (min-width: 768px){
     main .recently-played > div div{
@@ -189,6 +331,7 @@ footer{
     }
 }
 
+/* DESKTOP */
 
 @media screen and (min-width: 992px){
     main .recently-played > div div{
