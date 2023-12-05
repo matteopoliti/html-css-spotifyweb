@@ -1,0 +1,177 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bgc-main);
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/* UTILITIES */
+
+:root{
+
+    --bgc-main: #141922;
+    --bcg-sidebar: #000000;
+    --bcg-footer: #282828;
+    --white: #fff;
+    --grey: #77797e;
+}
+
+
+/*  */
+/*  */
+/* HEADER */
+
+header{
+    background-color: rgba(8, 11, 18, 0.7);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+}
+
+header div{
+    background-color: brown;
+    height: 50px;
+    width: 50px;
+
+}
+
+
+/* SIDEBAR */
+
+.sidebar{
+    height: 100vh;
+    width: 60px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color:aqua; 
+    overflow-x: hidden; 
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .playlist{
+    display: none;
+}
+
+/* MAIN */
+
+main{
+    background-color: var(--bgc-main);
+    height: 100vh;
+    width: 100%;
+    padding-left: 100px;
+    
+}
+
+main nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+main nav h3{
+    background-color: blueviolet;
+    width: 50px;
+    height: 20px;
+}
+
+main .recently-played > div{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+main .recently-played > div div{
+    width: calc((100% / 2) - 10px);
+    height: 100px;
+    border: 1px solid lime;
+}
+
+main .create > div{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+main .create > div div{
+    width: calc((100% / 2) - 10px);
+    height: 100px;
+    border: 1px solid red;
+}
+
+main .popular-artist{
+padding-bottom: 100px;
+}
+
+main .popular-artist > div{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+main .popular-artist > div div{
+    width: calc((100% / 2) - 10px);
+    height: 100px;
+    border: 1px solid blue;
+}
+
+
+
+
+/* FOOTER */
+
+footer{
+    height: 70px;
+    background-color: green;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 576px){
+    
+}
+
+
+@media screen and (min-width: 768px){
+    
+}
+
+
+@media screen and (min-width: 992px){
+    
+}
+
