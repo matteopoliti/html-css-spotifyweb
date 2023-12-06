@@ -280,12 +280,114 @@ footer{
     position: fixed;
     z-index: 2;
     bottom: 0;
-
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
 }
 
+footer .left-bar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 40%;
+}
 
+footer .left-bar figure{
+    aspect-ratio: 1;
+    width: 50px;
+}
 
+footer .left-bar div h5{
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
 
+footer .left-bar div span{
+    color: var(--grey);
+    font-size: 10px;
+}
+
+footer .left-bar div span:hover{
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer .left-bar div:nth-child(3){
+    margin-left: 30px;
+}
+
+footer .left-bar div i{
+    color: var(--grey);
+    margin-right: 10px;
+    display: none;
+}
+
+footer .center-bar{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+footer .center-bar div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+footer .center-bar div:first-child i{
+    color: var(--white);
+    font-size: 25px;
+}
+
+footer .center-bar div:first-child i.fa-circle-play:hover{
+    font-size: 30px;
+}
+
+footer .center-bar div:last-child span{
+    color: var(--white);  
+    font-size: 12px;
+}
+
+footer .center-bar div:last-child div{
+    width: 100%; 
+}
+
+input {
+    height: 4px;
+    width: 100%;
+    margin: 2px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    appearance: none;
+    background-color:  #5e5e5e;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* display: none; */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color:var(--white);
+}
+
+input[type="range"]:hover {
+    background: green;
+}
+
+footer .right-bar{
+    
+    display: none;
+}
+
+footer .right-bar i{
+    color: var(--white);
+}
 
 
 
@@ -336,6 +438,11 @@ footer{
         font-size: 12px;
     }
 
+    .sidebar > div span:hover{
+        color: var(--white);
+        
+    }
+
     .sidebar > div .logos div:hover span{
         color: var(--white);
     }
@@ -368,6 +475,11 @@ footer{
         overflow: auto;
     }
 
+    .sidebar .playlist ul li:hover{
+        color: var(--white);
+        
+    }
+
     .sidebar .playlist ul li{
         margin-block: 10px;
         font-size: 12px;
@@ -387,6 +499,11 @@ footer{
         width: 30px;
         height: 30px;
         position: relative;
+
+    }
+
+    .sidebar .playlist ul li:hover > div{
+        background-color: var(--white);
 
     }
 
@@ -418,8 +535,6 @@ footer{
 
     main{
         padding: 100px 30px 100px 230px;
-
-
     }
 
 
@@ -442,6 +557,27 @@ footer{
     main .popular-artist > div div{
         width: calc((100% / 4) - (30px / 4));
 
+    }
+
+    footer .left-bar{
+        width: auto;
+    }
+    
+    footer .left-bar div i{
+        display:inline-block;
+    }
+    footer .left-bar div i:hover{
+        color: var(--white);
+    }
+
+    footer .center-bar{
+        width: 40%;
+    }
+    
+    footer .right-bar{
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 }
 
