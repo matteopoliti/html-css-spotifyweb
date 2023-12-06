@@ -66,12 +66,12 @@ header div a:hover{
 .sidebar{
     height: calc(100% - 70px);
     width: 40px;
-    position: fixed; 
-    z-index: 1; 
-    top: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
     left: 0;
-    background-color:var(--bcg-sidebar); 
-    overflow-x: hidden; 
+    background-color:var(--bcg-sidebar);
+    overflow-x: hidden;
     padding: 5px 7px;
     display: flex;
     flex-direction: column;
@@ -105,11 +105,11 @@ header div a:hover{
     display: none;
 }
 
-.sidebar .download-profile div:first-child img{ 
+.sidebar .download-profile div:first-child img{
     width: 15px;
 }
 
-.sidebar .download-profile div:last-child img{ 
+.sidebar .download-profile div:last-child img{
     background-color: var(--grey);
     border-radius: 50%;
     aspect-ratio: 1;
@@ -133,7 +133,7 @@ main{
     width: 100%;
     padding: 100px 30px 100px 70px;
     overflow: auto;
-    
+
 }
 
 /* nav */
@@ -190,6 +190,25 @@ main .recently-played > div div span{
     font-weight: bold;
 }
 
+/* create for john doe */
+
+main .create{
+    margin-block: 40px;
+}
+
+main .create h2{
+    color: var(--white);
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+main .create span{
+    color: var(--grey);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+
 main .create > div{
     display: flex;
     gap: 10px;
@@ -198,13 +217,31 @@ main .create > div{
 
 main .create > div div{
     width: calc((100% / 2) - 10px / 2);
-    height: 100px;
-    border: 1px solid red;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-main .popular-artist{
-padding-bottom: 100px;
+main .create > div div h3{
+    color: var(--white);
+    text-transform: capitalize;
 }
+
+/* popular artists */
+
+main .popular-artist h2{
+    color: var(--white);
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+main .popular-artist span{
+    color: var(--grey);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
 
 main .popular-artist > div{
     display: flex;
@@ -214,8 +251,21 @@ main .popular-artist > div{
 
 main .popular-artist > div div{
     width: calc((100% / 2) - 10px / 2);
-    height: 100px;
-    border: 1px solid blue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .popular-artist > div div figure img{
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+main .popular-artist > div div h3{
+    color: var(--white);
+    text-transform: capitalize;
 }
 
 
@@ -225,7 +275,7 @@ main .popular-artist > div div{
 
 footer{
     height: 70px;
-    background-color: green;
+    background-color: #282828;
     width: 100%;
     position: fixed;
     z-index: 2;
@@ -253,7 +303,7 @@ footer{
     header{
     left: 200px;
 }
-    
+
     .sidebar{
         width: 200px;
         padding: 10px 0;
@@ -268,17 +318,17 @@ footer{
         width: 20px;
     }
 
-    
+
     .sidebar .logos div:first-child figure img:last-child{
         display: block;
         width: 120px;
         margin-bottom: 20px;
     }
-    
+
     .sidebar .logos div:first-child figure img:first-child{
         display: none;
     }
-    
+
     .sidebar > div span{
         display: inline;
         color: var(--grey);
@@ -289,7 +339,7 @@ footer{
     .sidebar > div .logos div:hover span{
         color: var(--white);
     }
-    
+
     .sidebar .logos,
     .sidebar .download-profile{
         align-items: flex-start;
@@ -304,7 +354,7 @@ footer{
         overflow: auto;
         padding: 15px;
     }
-    
+
     .sidebar .playlist h4{
         color: var(--white);
         text-transform: uppercase;
@@ -337,7 +387,7 @@ footer{
         width: 30px;
         height: 30px;
         position: relative;
-        
+
     }
 
     .sidebar .playlist ul li > div span{
@@ -354,7 +404,7 @@ footer{
         padding: 15px;
     }
 
-    .sidebar .download-profile div{ 
+    .sidebar .download-profile div{
         display: flex;
         align-items: center;
         gap: 10px;
@@ -365,14 +415,14 @@ footer{
         border: 1px solid var(--grey);
         width: 100%;
     }
-    
+
     main{
         padding: 100px 30px 100px 230px;
-        
-        
+
+
     }
-    
-    
+
+
 }
 
 
@@ -381,7 +431,17 @@ footer{
 @media screen and (min-width: 768px){
     main .recently-played > div div{
         width: calc((100% / 4) - (30px / 4));
-        
+
+    }
+
+    main .create > div div{
+        width: calc((100% / 4) - (30px / 4));
+
+    }
+
+    main .popular-artist > div div{
+        width: calc((100% / 4) - (30px / 4));
+
     }
 }
 
@@ -390,7 +450,17 @@ footer{
 @media screen and (min-width: 992px){
     main .recently-played > div div{
         width: calc((100% / 6) - (50px / 6));
-        
+
+    }
+
+    main .create > div div{
+        width: calc((100% / 6) - (50px / 6));
+
+    }
+
+    main .popular-artist > div div{
+        width: calc((100% / 6) - (50px / 6));
+
     }
 }
 
