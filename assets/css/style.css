@@ -33,12 +33,17 @@ img{
 
 header{
     background-color: rgba(8, 11, 18, 0.7);
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 40px;
+    right: 0;
+
 }
+
 
 
 header div a{
@@ -59,7 +64,7 @@ header div a:hover{
 /* SIDEBAR */
 
 .sidebar{
-    height: 90vh;
+    height: calc(100% - 70px);
     width: 40px;
     position: fixed; 
     z-index: 1; 
@@ -80,6 +85,16 @@ header div a:hover{
     justify-content: center;
     align-items: center;
     gap: 7px;
+}
+
+.sidebar .logos div:nth-child(2) figure img,
+.sidebar .logos div:nth-child(3) figure img,
+.sidebar .logos div:nth-child(4) figure img{
+    opacity: 0.7;
+}
+
+.sidebar .logos div:hover figure img{
+    opacity: 1;
 }
 
 .sidebar .logos div:first-child figure img:last-child{
@@ -116,22 +131,38 @@ main{
     background-color: var(--bgc-main);
     height: 100vh;
     width: 100%;
-    padding: 50px 50px 50px 100px;
-    overflow: visible;
+    padding: 100px 30px 100px 70px;
+    overflow: auto;
     
 }
+
+/* nav */
 
 main nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    row-gap: 40px;
+    margin-bottom: 40px;
 }
 
 main nav h3{
-    background-color: blueviolet;
-    width: 50px;
-    height: 20px;
+    color: var(--grey);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+main nav h3:hover{
+    color: var(--white);
+}
+
+/* Recently played */
+
+main .recently-played h2{
+    color: var(--white);
+    margin-bottom: 30px;
+    font-size: 28px;
 }
 
 main .recently-played > div{
@@ -141,9 +172,22 @@ main .recently-played > div{
 }
 
 main .recently-played > div div{
-    width: calc((100% / 2) - 10px);
-    height: 100px;
-    border: 1px solid lime;
+    width: calc((100% / 2) - 10px / 2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .recently-played > div div h3{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+main .recently-played > div div span{
+    color: var(--grey);
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 main .create > div{
@@ -153,7 +197,7 @@ main .create > div{
 }
 
 main .create > div div{
-    width: calc((100% / 2) - 10px);
+    width: calc((100% / 2) - 10px / 2);
     height: 100px;
     border: 1px solid red;
 }
@@ -169,7 +213,7 @@ main .popular-artist > div{
 }
 
 main .popular-artist > div div{
-    width: calc((100% / 2) - 10px);
+    width: calc((100% / 2) - 10px / 2);
     height: 100px;
     border: 1px solid blue;
 }
@@ -180,7 +224,7 @@ main .popular-artist > div div{
 /* FOOTER */
 
 footer{
-    height: 10vh;
+    height: 70px;
     background-color: green;
     width: 100%;
     position: fixed;
@@ -206,6 +250,10 @@ footer{
 /* TABLET SMALL */
 
 @media screen and (min-width: 576px){
+    header{
+    left: 200px;
+}
+    
     .sidebar{
         width: 200px;
         padding: 10px 0;
@@ -237,6 +285,10 @@ footer{
         font-weight: bold;
         font-size: 12px;
     }
+
+    .sidebar > div .logos div:hover span{
+        color: var(--white);
+    }
     
     .sidebar .logos,
     .sidebar .download-profile{
@@ -248,7 +300,8 @@ footer{
         display: block;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        height: 285px;
+        overflow: auto;
         padding: 15px;
     }
     
@@ -262,6 +315,7 @@ footer{
         text-transform: capitalize;
         list-style-type: none;
         color: var(--grey);
+        overflow: auto;
     }
 
     .sidebar .playlist ul li{
@@ -313,7 +367,7 @@ footer{
     }
     
     main{
-        padding: 50px 50px 50px 250px;
+        padding: 100px 30px 100px 230px;
         
         
     }
