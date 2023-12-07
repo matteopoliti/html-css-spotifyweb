@@ -28,8 +28,18 @@ img{
 
 
 /*  */
-/*  */
 /* HEADER */
+/*  */
+
+.web-app{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.web-app-top{
+    height: calc(100% - 70px);
+    display: flex;
+}
 
 header{
     background-color: rgba(8, 11, 18, 0.7);
@@ -38,8 +48,8 @@ header{
     align-items: center;
     padding: 30px 20px;
     position: fixed;
-    top: 0;
     left: 40px;
+    top: 0;
     right: 0;
     z-index: 1;
 
@@ -61,26 +71,24 @@ header div a:hover{
     font-size: 14px;
 }
 
-
+/*  */
 /* SIDEBAR */
+/*  */
 
 .sidebar{
-    height: calc(100% - 70px);
+    height: 100%;
     width: 40px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     background-color:var(--bcg-sidebar);
     overflow: hidden;
     padding: 5px 7px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.sidebar .logos,
-.sidebar .download-profile{
+.sidebar > div:first-child{
+    height: calc(100% - 90px);
+    overflow: hidden;
+    min-height: 300px;
+}
+.sidebar .logos{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,12 +106,24 @@ header div a:hover{
     opacity: 1;
 }
 
+
+
 .sidebar .logos div:first-child figure img:last-child{
     display: none;
 }
 
 .sidebar > div span{
     display: none;
+}
+
+
+.sidebar .download-profile{
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7px;
 }
 
 .sidebar .download-profile div:first-child img{
@@ -127,13 +147,14 @@ header div a:hover{
     
 }
 
+/*  */
 /* MAIN */
+/*  */
 
 main{
     background-color: var(--bgc-main);
-    height: 100vh;
-    width: 100%;
-    padding: 100px 30px 100px 70px;
+    width: calc(100% - 40px);
+    padding: 30px;
     overflow: auto;
 
 }
@@ -147,16 +168,22 @@ main nav {
     gap: 20px;
     row-gap: 40px;
     margin-bottom: 40px;
+    padding-top: 70px;
 }
 
 main nav h3{
     color: var(--grey);
     text-transform: uppercase;
     font-size: 14px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--bgc-main);
 }
 
 main nav h3:hover{
     color: var(--white);
+    border-bottom: 3px solid #adff2f;
+    cursor: pointer;
+    
 }
 
 /* Recently played */
@@ -349,9 +376,6 @@ footer{
     height: 70px;
     background-color: #282828;
     width: 100%;
-    position: fixed;
-    z-index: 2;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
     padding: 40px 20px;
@@ -449,7 +473,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]:hover {
-    background: green;
+    background: #adff2f;
 }
 
 footer .right-bar{
@@ -475,8 +499,12 @@ footer .right-bar i{
 
 @media screen and (min-width: 576px){
     header{
-    left: 200px;
-}
+        left: 200px;
+    }
+
+    main{
+        width: calc(100% - 200px);
+    }
 
     .sidebar{
         width: 200px;
@@ -512,13 +540,19 @@ footer .right-bar i{
 
     .sidebar > div span:hover{
         color: var(--white);
-        
+        cursor: pointer;
     }
 
     .sidebar > div .logos div:hover span{
         color: var(--white);
     }
 
+    .sidebar .logos div:nth-child(2):hover,
+    .sidebar .logos div:nth-child(3):hover,
+    .sidebar .logos div:nth-child(4):hover {
+        border-left: 3px solid #adff2f;
+        cursor: pointer;
+    }
     .sidebar .logos,
     .sidebar .download-profile{
         align-items: flex-start;
@@ -529,7 +563,7 @@ footer .right-bar i{
         display: block;
         display: flex;
         flex-direction: column;
-        max-height: 70%;
+        max-height: 80%;
         overflow: auto;
         padding: 15px;
     }
@@ -549,6 +583,7 @@ footer .right-bar i{
 
     .sidebar .playlist ul li:hover{
         color: var(--white);
+        cursor: pointer;
         
     }
 
@@ -558,28 +593,28 @@ footer .right-bar i{
         font-weight: bold;
     }
 
-    .sidebar .playlist ul li:first-child{
+    .sidebar .playlist > div{
         display: flex;
         gap: 10px;
         align-items: center;
+        margin-top: 10px;
+        
     }
 
-    .sidebar .playlist ul li > div{
+    .sidebar .playlist > div div{
         background-color: var(--grey);
         padding: 10px;
-        display: inline-block;
         width: 30px;
         height: 30px;
         position: relative;
-
     }
 
-    .sidebar .playlist ul li:hover > div{
+    .sidebar .playlist > div:hover div{
         background-color: var(--white);
-
+        cursor: pointer;
     }
 
-    .sidebar .playlist ul li > div span{
+    .sidebar .playlist > div div span{
         color: #000000;
         font-size: 30px;
         font-weight: bold;
@@ -588,6 +623,20 @@ footer .right-bar i{
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .sidebar .playlist > div > span{
+        color: var(--grey);
+        text-decoration: none;
+        font-size: 12px;
+        text-transform: capitalize;
+
+    }
+
+    .sidebar .playlist > div:hover > span{
+        color: var(--white);
+        cursor: pointer;
+    }
+
 
     .sidebar .download-profile{
         padding: 15px;
@@ -605,9 +654,7 @@ footer .right-bar i{
         width: 100%;
     }
 
-    main{
-        padding: 100px 30px 100px 230px;
-    }
+
 
 
 }
