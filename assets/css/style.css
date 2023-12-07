@@ -41,6 +41,7 @@ header{
     top: 0;
     left: 40px;
     right: 0;
+    z-index: 1;
 
 }
 
@@ -71,8 +72,8 @@ header div a:hover{
     top: 0;
     left: 0;
     background-color:var(--bcg-sidebar);
-    overflow-x: hidden;
-    padding: 5px 7px;
+    overflow: hidden;
+    padding: 5px 7px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,6 +124,7 @@ header div a:hover{
 
 .sidebar .playlist{
     display: none;
+    
 }
 
 /* MAIN */
@@ -190,6 +192,31 @@ main .recently-played > div div span{
     font-weight: bold;
 }
 
+main .recently-played > div div figure {
+    position: relative;
+}
+
+main .recently-played > div div figure i{
+    display: none;   
+}
+
+main .recently-played > div div figure:hover i{
+    display: block;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 40px;   
+}
+
+main .recently-played > div div figure:hover img {
+    opacity: 0.5;
+}
+
+
+
+
 /* create for john doe */
 
 main .create{
@@ -226,6 +253,28 @@ main .create > div div{
 main .create > div div h3{
     color: var(--white);
     text-transform: capitalize;
+}
+
+main .create > div div figure {
+    position: relative;
+}
+
+main .create > div div figure i{
+    display: none;   
+}
+
+main .create > div div figure:hover i{
+    display: block;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 40px;   
+}
+
+main .create > div div figure:hover img {
+    opacity: 0.5;
 }
 
 /* popular artists */
@@ -266,6 +315,29 @@ main .popular-artist > div div figure img{
 main .popular-artist > div div h3{
     color: var(--white);
     text-transform: capitalize;
+}
+
+main .popular-artist > div div figure {
+    position: relative;
+}
+
+main .popular-artist > div div figure i{
+    display: none;   
+}
+
+
+main .popular-artist > div div figure:hover i{
+    display: block;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 40px;   
+}
+
+main .popular-artist > div div figure:hover img {
+    opacity: 0.5;
 }
 
 
@@ -367,9 +439,9 @@ input {
     background-color:  #5e5e5e;
 }
 
+
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    /* display: none; */
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -457,7 +529,7 @@ footer .right-bar i{
         display: block;
         display: flex;
         flex-direction: column;
-        height: 285px;
+        max-height: 70%;
         overflow: auto;
         padding: 15px;
     }
